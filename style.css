@@ -1,0 +1,250 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'Prog';
+    src: url(Fontes/Efervescencia\ Programada.ttf) format('opentype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'M-black';
+    src: url(Fontes/Morganite-Black.ttf) format('opentype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'M-bold';
+    src: url(Fontes/Morganite-Bold.ttf) format('opentype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'M-light';
+    src: url(Fontes/Morganite-Light.ttf) format('opentype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'M-book';
+    src: url(Fontes/Morganite-Book.ttf) format('opentype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'M-extrabold';
+    src: url(Fontes/Morganite-ExtraBold.ttf) format('opentype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'M-extralight';
+    src: url(Fontes/Morganite-ExtraLight.ttf) format('opentype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'M-medium';
+    src: url(Fontes/Morganite-Medium.ttf) format('opentype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'M-thin';
+    src: url(Fontes/Morganite-Thin.ttf) format('opentype');
+    font-weight: normal;
+}
+
+@keyframes glitch { 
+    0% { text-shadow: 2px 2px #ff0000, -2px -2px #0000ff; } 
+    50% { text-shadow: -2px -2px #ff0000, 2px 2px #0000ff; } 
+    100% { text-shadow: 2px 2px #ff0000, -2px -2px #0000ff; } } 
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+:root{
+    --cor0:#dddddd;
+    --cor1:#bbbbbb;
+    --cor2:#818181;
+    --cor3:#5c5c5c;
+    --cor4:#313131;
+    --cor5:#1d1d1d;
+
+
+    --fonte-padrao: Arial, Verdana, Helvetica, sans-serif;
+    --fonte-destaque:'Prog';
+    --fonte-morganite-black:'M-black';
+    --fonte-morganite-bold:'M-bold';
+    --fonte-morganite-light:'M-light';
+    --fonte-morganite-medium:'M-medium';
+    --fonte-morganite-thin:'M-thin';
+
+}
+
+body{
+    background-image: linear-gradient(to bottom, var(--cor1), var(--cor5));
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    background-image: linear-gradient(to bottom, var(--cor3), var(--cor5));
+}
+
+header img {
+    border-radius: 100%;
+    box-shadow: 0px 0px 10px var(--cor0);
+    width: 120px;
+    max-width: 100%;
+}
+
+header h1 {
+    text-shadow: 0px 0px 5px var(--cor0);
+    color: var(--cor1);
+    font-size: 3em;
+    font-family: var(--fonte-destaque);
+    position: relative;
+    animation: glitch 1s infinite;
+}
+
+header p {
+    font-family: var(--fonte-morganite-black);
+    font-size: 30px;
+    text-shadow: 0px 0px 10px var(--cor0);
+}
+
+@media (min-width: 768px) {
+    header {
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 20px 10%;
+        text-align: left;
+    }
+
+    header img {
+        width: 150px;
+        margin-right: 150px; /* Espaço entre a imagem e o texto */
+    }
+
+    header h1 {
+        font-size: 5em;
+        text-align: center;
+        flex-grow: 1; /* Ocupa o espaço restante */
+    }
+
+    header p {
+        font-size: 50px;
+        text-align: center;
+        flex-grow: 1; /* Ocupa o espaço restante */
+    }
+}
+
+.imagens img{
+    width: 100%;
+}
+
+.video video {
+    display: block; /* Transforma o vídeo em um bloco */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    width: 100%;
+    max-width: 800px; /* Define uma largura máxima para o vídeo (opcional) */
+}
+
+nav {
+    box-shadow: 0px 5px 10px var(--cor5);
+    padding: 10px;
+    background-color: var(--cor5);
+    text-align: center;
+}
+
+nav a {
+    display: inline-block; /* Faz os links se comportarem como blocos */
+    box-shadow: 0px 0px 10px var(--cor0);
+    margin: 5px; /* Espaçamento entre os botões */
+    color: var(--cor0);
+    background-color: var(--cor2);
+    padding: 10px 20px; /* Aumenta o padding para parecer mais com botões */
+    border-radius: 5px;
+    text-decoration: none; /* Remove o sublinhado dos links */
+    font-size: 1em;
+    transition: background-color 0.5s, color 0.5s; /* Transição suave */
+}
+
+nav a:hover {
+    color: var(--cor5);
+    background-color: var(--cor0);
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    nav {
+        padding: 10px 5px; /* Reduz o padding em telas menores */
+    }
+
+    nav a {
+        display: block; /* Coloca os links em blocos (um abaixo do outro) */
+        margin: 10px auto; /* Centraliza os botões e adiciona espaçamento */
+        width: 80%; /* Define uma largura máxima para os botões */
+        max-width: 300px; /* Limita a largura máxima */
+    }
+}
+
+main{
+    box-shadow: 0px 5px 10px black;
+    padding: 10px;
+    margin: auto;
+    max-width: 700px;
+    line-height: 3em;
+    background-color: var(--cor3);
+}
+
+main h1{
+    font-family: var(--fonte-destaque);
+    font-size: 3.5em;
+    color: var(--cor0);
+    text-shadow: 3px 3px 3px var(--cor5);
+    padding: 20px;
+}
+
+main p{
+    font-size: 2em;
+    font-family: var(--fonte-morganite-bold);
+    text-shadow: #dddddd 0px 0px 10px;
+}
+
+footer{
+    text-align: center;
+    background-color: var(--cor4);
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+.card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 250px;
+    text-align: center;
+}
+.card img {
+    width: 100%;
+    height: auto;
+}
+.card h3 {
+    margin: 10px;
+}
+.card p {
+    padding: 3px;
+    color: #181818;
+}
